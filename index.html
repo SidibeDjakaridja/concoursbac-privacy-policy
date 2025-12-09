@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politiques - Concours+ Bac</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+        }
+
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .breadcrumb {
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+
+        .tab-button:hover {
+            color: #000;
+        }
+
+        .tab-button.active {
+            color: #000;
+            border-bottom-color: #000;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        .last-updated {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #000;
+            margin-top: 2rem;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .subsection-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #333;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .content-section a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+
+        .content-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        .footer-status {
+            color: #10b981;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-copyright {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .tab-button {
+                text-align: left;
+                border-bottom: 1px solid #e5e7eb;
+                border-left: 3px solid transparent;
+                margin-bottom: 0;
+            }
+
+            .tab-button.active {
+                border-left-color: #000;
+                border-bottom-color: #e5e7eb;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">Concours+ Bac</a>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('privacy', this)">Politique de confidentialité</button>
+            <button class="tab-button" onclick="showTab('terms', this)">Termes et conditions</button>
+        </div>
+
+        <!-- Politique de confidentialité -->
+        <div id="privacy" class="tab-content active">
+            <div class="page-header">
+                <h1 class="page-title">Politique de confidentialité</h1>
+                <p class="last-updated">Date de la dernière mise à jour : 01/12/2025</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Introduction</h2>
+                <p>La présente politique de confidentialité régit la manière dont l'application Concours+ Bac, collecte, utilise, divulgue et protège les informations personnelles de ses utilisateurs. En utilisant Concours+ Bac, vous acceptez les pratiques décrites dans cette politique. Nous nous engageons à respecter les règles et conditions du Google Play Store et de l'Apple Store.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Accessibilité de la politique de confidentialité</h2>
+                <p>Conformément aux exigences du Google Play Store et de l'Apple App Store, cette politique de confidentialité est facilement accessible et disponible à la fois sur la page de l'application dans les stores et dans l'application elle-même.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Collecte des informations et consentement des utilisateurs</h2>
+                <p>Concours+ Bac collecte les informations personnelles suivantes auprès de ses utilisateurs avec leur consentement préalable :</p>
+                <ul>
+                    <li>Photo de profil</li>
+                    <li>Adresse e-mail</li>
+                    <li>Noms et prénoms</li>
+                    <li>Genre</li>
+                </ul>
+                <p>Ces informations sont collectées lors de l'inscription et l'authentification des utilisateurs, ainsi que lors de l'utilisation des services de l'application.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Utilisation des informations</h2>
+                <p>Les informations collectées sont utilisées aux fins suivantes :</p>
+                <ul>
+                    <li>Authentifier les utilisateurs et sécuriser leurs comptes</li>
+                    <li>Personnaliser et améliorer les services de l'application</li>
+                    <li>Communiquer avec les utilisateurs pour des mises à jour, des promotions et des informations importantes</li>
+                    <li>Effectuer des analyses pour améliorer les offres et les adapter aux besoins des utilisateurs</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Stockage des informations</h2>
+                <p>Les données personnelles collectées sont stockées aux États-Unis et les serveurs sont hébergés par Digital Ocean. Concours+ Bac prend toutes les mesures nécessaires pour garantir la sécurité et la confidentialité des informations stockées, conformément aux réglementations en vigueur.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Partage des informations</h2>
+                <p>Concours+ Bac ne vend ni ne loue les informations personnelles des utilisateurs à des tiers. Les informations peuvent être partagées avec des partenaires et des prestataires de services dans la mesure nécessaire pour assurer le bon fonctionnement de l'application et pour fournir les services requis.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Protection des informations</h2>
+                <p>Nous mettons en œuvre des mesures de sécurité appropriées pour protéger les informations personnelles contre l'accès non autorisé, la divulgation, la modification ou la destruction. Ces mesures incluent des contrôles techniques, organisationnels et physiques adaptés au type d'information traitée.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Droits des utilisateurs</h2>
+                <p>Conformément aux lois et réglementations en vigueur, les utilisateurs ont le droit de demander l'accès, la rectification, la suppression ou la restriction du traitement de leurs informations personnelles. Pour exercer ces droits, les utilisateurs peuvent contacter Concours+ Bac à l'adresse e-mail indiquée dans la section « Contactez-nous ».</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Modifications de la politique de confidentialité</h2>
+                <p>Concours+ Bac se réserve le droit de modifier cette politique de confidentialité à tout moment. Les utilisateurs seront informés de tout changement significatif et seront invités à revoir la politique mise à jour.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Conformité aux lois et réglementations</h2>
+                <p>Nous nous engageons à respecter toutes les lois et réglementations en vigueur concernant la protection des données, y compris le Règlement général sur la protection des données (RGPD) de l'Union européenne, le California Consumer Privacy Act (CCPA) et d'autres lois locales ou nationales. Cette politique de confidentialité a été conçue pour répondre aux exigences de ces réglementations.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Contactez-nous</h2>
+                <p>Si vous avez des questions ou des préoccupations concernant cette politique de confidentialité ou si vous souhaitez exercer vos droits en matière de protection des données, veuillez contacter Concours+ Bac à l'adresse e-mail suivante : <a href="mailto:sidibedjakaridjasp@gmail.com">sidibedjakaridjasp@gmail.com</a></p>
+            </div>
+        </div>
+
+        <!-- Termes et conditions -->
+        <div id="terms" class="tab-content">
+            <div class="page-header">
+                <h1 class="page-title">Termes et conditions</h1>
+                <p class="last-updated">Date de la dernière mise à jour : 01/12/2025</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Introduction</h2>
+                <p>Les présents termes et conditions d'utilisation ("Termes") régissent votre accès et utilisation de l'application mobile Concours+ Bac ("Concours+ Bac" ou "l'Application"). En installant, accédant ou utilisant Concours+ Bac, vous acceptez d'être lié par ces Termes. Si vous n'acceptez pas ces Termes, veuillez ne pas installer, accéder ou utiliser Concours+ Bac.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Licence d'utilisation</h2>
+                <p>Sous réserve de votre respect de ces Termes, Concours+ Bac vous accorde une licence limitée, non exclusive, non transférable et révocable pour installer et utiliser l'Application sur un appareil compatible Android ou iOS, conformément aux règles et conditions du Google Play Store et de l'Apple App Store.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Restrictions d'utilisation</h2>
+                <p>Vous acceptez de ne pas :</p>
+                <ul>
+                    <li>Utiliser l'Application à des fins illégales ou interdites par les présents Termes</li>
+                    <li>Copier, modifier, distribuer, vendre ou créer des œuvres dérivées de l'Application</li>
+                    <li>Tenter de désassembler, décompiler, faire de l'ingénierie inverse ou contourner les mesures de sécurité de l'Application</li>
+                    <li>Supprimer, masquer ou altérer les avis de droits d'auteur, de marque déposée ou autres droits de propriété inclus dans l'Application</li>
+                    <li>Utiliser l'Application pour harceler, menacer, diffamer ou violer les droits d'autrui</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Propriété intellectuelle</h2>
+                <p>Tous les droits, titres et intérêts relatifs à l'Application, y compris, sans limitation, les droits d'auteur, les marques déposées et autres droits de propriété intellectuelle, appartiennent à Thierry N'Doufou et/ou à ses concédants de licence. Aucun droit ou titre relatif à l'Application ne vous est transféré.</p>
+                <p>L'Application peut contenir des références, des images ou des informations concernant des marques, des logos ou des droits d'auteur appartenant à des tiers ("Contenu de tiers"). Ce Contenu de tiers est fourni à titre informatif uniquement et ne constitue en aucun cas une approbation, un parrainage ou une affiliation avec ces tiers. Concours+ Bac et Thierry N'Doufou ne revendiquent aucune propriété ni responsabilité sur ce Contenu de tiers, et l'utilisation de telles marques, images ou informations relève de la responsabilité de l'utilisateur et doit se conformer aux lois applicables en matière de propriété intellectuelle.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Contenu utilisateur</h2>
+                <p>Concours+ Bac peut vous permettre de soumettre, télécharger ou partager du contenu, comme des commentaires, des images ou d'autres matériaux ("Contenu utilisateur"). Vous êtes seul responsable du Contenu utilisateur que vous soumettez et vous accordez à Concours+ Bac une licence mondiale, non exclusive, libre de droits, transférable et sous-licenciable pour utiliser, reproduire, distribuer et afficher votre Contenu utilisateur en relation avec l'Application et ses services.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Exclusion de garantie</h2>
+                <p>L'Application est fournie "telle quelle" et "selon disponibilité", sans garantie d'aucune sorte, expresse ou implicite, y compris, sans limitation, les garanties de qualité marchande, d'adéquation à un usage particulier et de non-contrefaçon.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Limitation de responsabilité</h2>
+                <p>En aucun cas, Concours+ Bac ou ses affiliés ne pourront être tenus responsables des dommages directs, indirects, consécutifs, spéciaux, punitifs ou autres dommages résultant de l'utilisation de l'Application, même si Concours+ Bac a été informé de la possibilité de tels dommages.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Résiliation</h2>
+                <p>Concours+ Bac se réserve le droit de résilier votre accès et utilisation de l'Application à tout moment et sans préavis si vous ne respectez pas les Termes. En cas de résiliation, vous devez cesser d'utiliser l'Application et désinstaller celle-ci de tous les appareils sur lesquels elle a été installée.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Modifications des Termes</h2>
+                <p>Concours+ Bac se réserve le droit de modifier ces Termes à tout moment. Les modifications entreront en vigueur dès leur publication sur la page de l'Application dans le Google Play Store et l'Apple App Store, ou au sein de l'Application. Il vous incombe de consulter régulièrement les Termes pour vous informer des éventuelles modifications. Votre utilisation continue de l'Application après la publication des modifications constitue votre acceptation des Termes modifiés.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Loi applicable et juridiction</h2>
+                <p>Ces Termes sont régis par les lois du pays dans lequel Concours+ Bac est basé. Tout litige ou réclamation découlant de ou en relation avec ces Termes sera soumis à la compétence exclusive des tribunaux de ce pays.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Contactez-nous</h2>
+                <p>Si vous avez des questions ou des préoccupations concernant ces Termes, veuillez contacter Concours+ Bac à l'adresse e-mail indiquée dans la section "Contactez-nous" de la politique de confidentialité : <a href="mailto:sidibedjakaridjasp@gmail.com">sidibedjakaridjasp@gmail.com</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">Concours+ Bac</div>
+            <div class="footer-status">Tous les systèmes opérationnels</div>
+            <div class="footer-copyright">© 2025 Concours+ Bac. Tous droits réservés.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching
+        function showTab(tabName, buttonElement) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            } else {
+                // Fallback: find button by tab name
+                buttons.forEach(button => {
+                    if (button.onclick && button.onclick.toString().includes(tabName)) {
+                        button.classList.add('active');
+                    }
+                });
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Handle URL hash for direct linking
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash;
+            if (hash === '#terms') {
+                const termsButton = document.querySelectorAll('.tab-button')[1];
+                showTab('terms', termsButton);
+            }
+        });
+    </script>
+</body>
+</html>
